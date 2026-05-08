@@ -1,0 +1,32 @@
+name: Code Quality
+
+on:
+    pull_request:
+        branches: [ "main" ]
+
+jobs:
+    quality-check:
+
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+
+        steps:
+
+
+        - name: "Checkout code(Fetching source code)"
+          uses: actions/checkout@v4
+
+        - name: Use Node.js 20
+          uses: actions/setup-node@v4
+          with:
+              node-version: 20
+              cache: "npm"
+
+        - name: "install project dependencies"
+          run: npm install
+
+        - name: "To install custom dependencies especially eslints"
+          run: npm run lint
+
+        - name: "Test the npm file"
+          run: npm test

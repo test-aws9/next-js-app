@@ -1,12 +1,12 @@
 
-name: deploy
+name: Build docker image
 
 on:
   push:
-    branches: [ "main" ]
+    tags:  [ ' V* ' ]
 
 jobs:
-  deploy:
+  build-docker-image:
 
     runs-on: ubuntu-latest
 
