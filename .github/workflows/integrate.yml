@@ -2,7 +2,6 @@
 name: Integrate
 
 on:
-  workflow_dispatch:
     
   push:
     branches: [ "main" ]
