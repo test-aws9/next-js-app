@@ -1,6 +1,5 @@
 # Use the official Node.js image as a base image
-FROM --platform=linux/amd64 node:20-alpine
-
+FROM node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
 # Set the working directory inside the container
 WORKDIR /app
 
